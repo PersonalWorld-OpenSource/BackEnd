@@ -1,9 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PersonalWorld.API.Personal.Domain.Models;
 using PersonalWorld.API.Personal.Domain.Services;
-using PersonalWorld.API.Personal.Domain.Services.Communication;
 using PersonalWorld.API.Personal.Resources;
 using PersonalWorld.API.Shared.Extensions;
 
@@ -25,10 +23,19 @@ public class PersonController: ControllerBase
     public async Task<IEnumerable<PersonResource>> GetAllSync()
     {
         var persons = await _personService.ListAsync();
-        
+            
         var resources = _mapper.Map<IEnumerable<Person>, IEnumerable<PersonResource>>(persons);
-        
+            
         return resources;
+    }
+    [HttpGet("{id}")]
+    public async Task<PersonResource> GetPersonById(int id)
+    {
+        var person = await _personService.FindByIdAsync(id);
+        
+        var resource = _mapper.Map<Person, PersonResource>(person);
+        
+        return resource;
     }
 
     [HttpPost]
@@ -49,4 +56,31 @@ public class PersonController: ControllerBase
         return Ok(personResource);
     }
     
+    [HttpPut]
+    public async Task<IActionResult> PutAsync([FromBody] SavePersonResource resource, int id)
+    {
+        var person = _mapper.Map<SavePersonResource, Person>(resource);
+        
+        var result = await _personService.UpdateAsync(id, person);
+
+        if (!result.Success)
+            return BadRequest(result.Message);
+
+        var personResource = _mapper.Map<Person, PersonResource>(result.Resource);
+
+        return Ok(personResource);
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAsync(int id)
+    {
+        var result = await _personService.DeleteAsync(id);
+        
+        if (!result.Success)
+            return BadRequest(result.Message);
+        
+        var resource = _mapper.Map<Person, PersonResource>(result.Resource);
+        
+        return Ok(resource);
+    }
 }

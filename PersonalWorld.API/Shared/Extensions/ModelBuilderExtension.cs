@@ -10,21 +10,23 @@ public static class ModelBuilderExtension
         {
             entity.SetTableName(entity.GetTableName().ToSnakeCase());
 
-            foreach (var property in entity.GetProperties()) 
+            foreach (var property in entity.GetProperties())
             {
-                //property.SetColumnName(property.GetColumnName().ToSnakeCase());
+                // TODO: Review syntax
+                property.SetColumnName(property.GetColumnBaseName().ToSnakeCase());
+
             }
 
             foreach (var key in entity.GetKeys())
             {
                 key.SetName(key.GetName().ToSnakeCase());
             }
-            
-            foreach (var foreingKey in entity.GetForeignKeys())
+
+            foreach (var foreignKey in entity.GetForeignKeys())
             {
-                foreingKey.SetConstraintName(foreingKey.GetConstraintName().ToSnakeCase());
+                foreignKey.SetConstraintName(foreignKey.GetConstraintName().ToSnakeCase());
             }
-            
+
             foreach (var index in entity.GetIndexes())
             {
                 index.SetDatabaseName(index.GetDatabaseName().ToSnakeCase());
