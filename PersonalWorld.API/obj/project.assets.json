@@ -6107,24 +6107,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/djalma/.nuget/packages/": {}
+    "C:\\Users\\Joaqu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/PersonalWorld.API.csproj",
+      "projectUniqueName": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
       "projectName": "PersonalWorld.API",
-      "projectPath": "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/PersonalWorld.API.csproj",
-      "packagesPath": "/Users/djalma/.nuget/packages/",
-      "outputPath": "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/obj/",
+      "projectPath": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
+      "packagesPath": "C:\\Users\\Joaqu\\.nuget\\packages\\",
+      "outputPath": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/djalma/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6186,7 +6188,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/djalma/.dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
