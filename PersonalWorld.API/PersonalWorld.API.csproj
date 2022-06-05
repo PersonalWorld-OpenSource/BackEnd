@@ -19,7 +19,6 @@
       <Folder Include="Controllers" />
       <Folder Include="Personal\Controllers" />
       <Folder Include="Personal\Resources" />
-      <Folder Include="Personal\Services" />
     </ItemGroup>
 
     <ItemGroup>
