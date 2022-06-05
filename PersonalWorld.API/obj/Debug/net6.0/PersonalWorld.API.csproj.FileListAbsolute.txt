@@ -104,3 +104,4 @@ D:\CURSOS\2022-01\Aplicaciones Web\BackEnd\BackEnd\PersonalWorld.API\obj\Debug\n
 D:\CURSOS\2022-01\Aplicaciones Web\BackEnd\BackEnd\PersonalWorld.API\obj\Debug\net6.0\PersonalWorld.API.csproj.CopyComplete
 D:\CURSOS\2022-01\Aplicaciones Web\BackEnd\BackEnd\PersonalWorld.API\obj\Debug\net6.0\refint\PersonalWorld.API.dll
 D:\CURSOS\2022-01\Aplicaciones Web\BackEnd\BackEnd\PersonalWorld.API\obj\Debug\net6.0\PersonalWorld.API.genruntimeconfig.cache
+D:\CURSOS\2022-01\Aplicaciones Web\BackEnd\BackEnd\PersonalWorld.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

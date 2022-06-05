@@ -23,6 +23,7 @@ public class AppDbContext : DbContext
         
         //Herencia
         builder.Entity<Person>().HasDiscriminator(p => p.Type)
+            .HasValue<Person>("client")
             .HasValue<PersonLawyer>("lawyer");
         
         builder.Entity<Person>().HasKey(p => p.Id);
