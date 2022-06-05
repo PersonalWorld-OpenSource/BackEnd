@@ -9,7 +9,7 @@ public interface IPersonLawyerService
 
     Task<PersonLawyerResponse> SaveAsync(PersonLawyer personLawyer);
 
-    Task<PersonLawyer> FindByIdAsync(int id);
+    Task<PersonLawyerResponse> FindByIdAsync(int id);
 
     Task<PersonLawyerResponse> UpdateAsync(int id, PersonLawyer personLawyer);
 

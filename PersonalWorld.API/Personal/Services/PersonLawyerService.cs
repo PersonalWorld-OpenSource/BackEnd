@@ -36,9 +36,13 @@ public class PersonLawyerService : IPersonLawyerService
         }
     }
 
-    public async Task<PersonLawyer> FindByIdAsync(int id)
+    public async Task<PersonLawyerResponse> FindByIdAsync(int id)
     {
-        return await _personLawyerRepository.FindByIdAsync(id);
+        var existingLawyer = await _personLawyerRepository.FindByIdAsync(id);
+        if (existingLawyer == null)
+            return new PersonLawyerResponse("Invalid Lawyer Id");
+
+        return new PersonLawyerResponse(existingLawyer);
     }
 
     public async Task<PersonLawyerResponse> UpdateAsync(int id, PersonLawyer personLawyer)
