@@ -7,4 +7,5 @@ public class PersonLawyer : Person
     public int TotalCases { get; set; }
     public int LostCases { get; set; }
     public string Attribute { get; set; }
+    
 }
