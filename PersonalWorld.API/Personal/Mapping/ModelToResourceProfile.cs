@@ -13,5 +13,6 @@ public class ModelToResourceProfile : Profile
         CreateMap<PersonLawyer, PersonLawyerResource>();
         CreateMap<Plan, PlanResource>();
         CreateMap<PersonPlan, PersonPlanResource>();
+        CreateMap<Consult, ConsultResource>();
     }
 }
