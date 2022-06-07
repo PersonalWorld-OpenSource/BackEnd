@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {}
+    "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {}
   },
   "projects": {
-    "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {
+    "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
+        "projectUniqueName": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
         "projectName": "PersonalWorld.API",
-        "projectPath": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
-        "packagesPath": "C:\\Users\\Joaqu\\.nuget\\packages\\",
-        "outputPath": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BackEnd\\BackEnd\\PersonalWorld.API\\obj\\",
+        "projectPath": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
+        "packagesPath": "C:\\Users\\G5 KC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\G5 KC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\G5 KC\\.dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
