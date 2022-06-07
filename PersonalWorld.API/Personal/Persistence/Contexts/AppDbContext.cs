@@ -21,11 +21,12 @@ public class AppDbContext : DbContext
         //Person
         builder.Entity<Person>().ToTable("Persons");
         
-        //Herencia
+        //Relations
         builder.Entity<Person>().HasDiscriminator(p => p.Type)
             .HasValue<Person>("client")
             .HasValue<PersonLawyer>("lawyer");
         
+        //Person
         builder.Entity<Person>().HasKey(p => p.Id);
         builder.Entity<Person>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Person>().Property(p => p.FisrtName).IsRequired().HasMaxLength(40);
@@ -41,7 +42,14 @@ public class AppDbContext : DbContext
         builder.Entity<PersonLawyer>().Property(l => l.WonCases).IsRequired();
         builder.Entity<PersonLawyer>().Property(l => l.TotalCases).IsRequired();
         builder.Entity<PersonLawyer>().Property(l => l.LostCases).IsRequired();
-
+        
+        //Plans
+        builder.Entity<Plan>().HasKey(p => p.Id);
+        builder.Entity<Plan>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();;
+        builder.Entity<Plan>().Property(p => p.Name).IsRequired().HasMaxLength(70);
+        builder.Entity<Plan>().Property(p => p.Description).IsRequired().HasMaxLength(70);
+        builder.Entity<Plan>().Property(p => p.Price).IsRequired();
+        
         //Apply Naming Conventions
         builder.UseSnakeCaseNamingConvention();
     }
