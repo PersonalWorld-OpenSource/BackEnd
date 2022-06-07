@@ -22,6 +22,7 @@
 
     <ItemGroup>
       <Compile Remove="Controllers\WeatherForecastController.cs" />
+      <Compile Remove="Personal\Resources\IPersonPlanService.cs" />
     </ItemGroup>
 
 </Project>
