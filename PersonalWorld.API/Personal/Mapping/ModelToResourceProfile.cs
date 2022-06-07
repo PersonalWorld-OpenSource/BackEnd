@@ -11,5 +11,6 @@ public class ModelToResourceProfile : Profile
     {
         CreateMap<Person, PersonResource>();
         CreateMap<PersonLawyer, PersonLawyerResource>();
+        CreateMap<Plan, PlanResource>();
     }
 }
