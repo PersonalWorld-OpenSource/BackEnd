@@ -13,13 +13,16 @@ public class AppDbContext : DbContext
     
     public DbSet<Person> Persons { get; set; }
     public DbSet<PersonLawyer> Lawyers { get; set; }
-
+    public DbSet<Plan> Plans { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
         
         //Person
         builder.Entity<Person>().ToTable("Persons");
+        builder.Entity<Plan>().ToTable("Plans");
+        
         
         //Relations
         builder.Entity<Person>().HasDiscriminator(p => p.Type)
