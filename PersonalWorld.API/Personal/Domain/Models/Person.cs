@@ -10,4 +10,7 @@ public class Person
     public string Description { get; set; }
     public string UrlImage { get; set; }
     public string Type { get; set; }
+    
+    public IList<PersonPlan> PersonPlans { get; set; } = new List<PersonPlan>();
+
 }
