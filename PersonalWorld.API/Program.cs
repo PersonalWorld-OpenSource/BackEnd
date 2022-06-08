@@ -38,6 +38,8 @@ builder.Services.AddScoped<IPersonPlanRepository, PersonPlanRepository>();
 builder.Services.AddScoped<IPersonPlanService, PersonPlanService>();
 builder.Services.AddScoped<IConsultRepository, ConsultRepository>();
 builder.Services.AddScoped<IConsultService, ConsultService>();
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddAutoMapper(
