@@ -13,5 +13,6 @@ public class ResourceToModelProfile : Profile
         CreateMap<SavePlanResource, Plan>();
         CreateMap<SavePersonPlanResource, PersonPlan>();
         CreateMap<SaveConsultResource, Consult>();
+	CreateMap<SaveNotificationResource, Notification>();
     }
 }
