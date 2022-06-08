@@ -15,6 +15,7 @@ public class AppDbContext : DbContext
     public DbSet<PersonLawyer> Lawyers { get; set; }
     public DbSet<Plan> Plans { get; set; }
     public DbSet<PersonPlan> PersonPlans { get; set; }
+    public DbSet<Consult> Consults { get; set; }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -57,6 +58,25 @@ public class AppDbContext : DbContext
         builder.Entity<Plan>().Property(p => p.Name).IsRequired().HasMaxLength(70);
         builder.Entity<Plan>().Property(p => p.Description).IsRequired().HasMaxLength(70);
         builder.Entity<Plan>().Property(p => p.Price).IsRequired();
+        
+        //Consult
+        builder.Entity<Consult>()
+            .HasOne(p => p.Client)
+            .WithMany(p => p.ConsultsClient)
+            .HasForeignKey(p => p.ClientId);
+        
+        builder.Entity<Consult>()
+            .HasOne(p => p.Lawyer)
+            .WithMany(p => p.ConsultsLawyer)
+            .HasForeignKey(p => p.LawyerId);
+        
+        
+        builder.Entity<Consult>().ToTable("Consults");
+        builder.Entity<Consult>().HasKey(p => p.Id);
+        builder.Entity<Consult>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Consult>().Property(p => p.Title).IsRequired().HasMaxLength(40);
+        builder.Entity<Consult>().Property(p => p.Description).IsRequired().HasMaxLength(200);
+        builder.Entity<Consult>().Property(p => p.State).IsRequired().HasMaxLength(20);
         
         //Apply Naming Conventions
         builder.UseSnakeCaseNamingConvention();
