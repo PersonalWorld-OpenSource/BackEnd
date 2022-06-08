@@ -15,5 +15,7 @@ public class Person
     
     public IList<Consult> ConsultsClient { get; set; } = new List<Consult>();
     public IList<Consult> ConsultsLawyer { get; set; } = new List<Consult>();
+    
+    public IList<Notification> Notifications { get; set; } = new List<Notification>();
 
 }
