@@ -18,4 +18,5 @@ public class Person
     
     public IList<Notification> Notifications { get; set; } = new List<Notification>();
 
+    public IList<Message> Messages { get; set; } = new List<Message>();
 }
