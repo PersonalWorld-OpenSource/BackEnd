@@ -1,6 +1,7 @@
 using AutoMapper;
 using PersonalWorld.API.Personal.Domain.Models;
 using PersonalWorld.API.Personal.Resources;
+using PersonalWorld.API.Personal.Services;
 
 namespace PersonalWorld.API.Personal.Mapping;
 
@@ -13,5 +14,7 @@ public class ResourceToModelProfile : Profile
         CreateMap<SavePlanResource, Plan>();
         CreateMap<SavePersonPlanResource, PersonPlan>();
         CreateMap<SaveConsultResource, Consult>();
+	    CreateMap<SaveNotificationResource, Notification>();
+        CreateMap<SaveMessageResource, Message>();
     }
 }

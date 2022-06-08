@@ -14,4 +14,6 @@ public class Consult
     public Person Lawyer { get; set; }
 
     public IList<Notification> Notifications { get; set; } = new List<Notification>();
+    
+    public IList<Message> Messages { get; set; } = new List<Message>();
 }
