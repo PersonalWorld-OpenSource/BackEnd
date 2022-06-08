@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/PersonalWorld.API.csproj": {}
+    "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {}
   },
   "projects": {
-    "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/PersonalWorld.API.csproj": {
+    "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/PersonalWorld.API.csproj",
+        "projectUniqueName": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
         "projectName": "PersonalWorld.API",
-        "projectPath": "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/PersonalWorld.API.csproj",
-        "packagesPath": "/Users/djalma/.nuget/packages/",
-        "outputPath": "/Users/djalma/Documents/UPC Dev/App Web/PersonalWorld.API/PersonalWorld.API/obj/",
+        "projectPath": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
+        "packagesPath": "C:\\Users\\G5 KC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/djalma/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\G5 KC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -41,6 +41,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -81,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/djalma/.dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\G5 KC\\.dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
