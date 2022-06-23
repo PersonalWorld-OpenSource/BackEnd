@@ -1,12 +1,15 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PersonalWorld.API.Personal.Domain.Models;
 using PersonalWorld.API.Personal.Domain.Services;
 using PersonalWorld.API.Personal.Resources;
-using PersonalWorld.API.Shared.Extensions;
+using PersonalWorld.API.Security.Domain.Services.Communication;
 
 namespace PersonalWorld.API.Personal.Controllers;
 
+[Produces("application/json")]
+[ApiController]
 [Route("/api/v1/[controller]")]
 public class PersonController: ControllerBase
 {
@@ -17,6 +20,22 @@ public class PersonController: ControllerBase
     {
         _personService = personService;
         _mapper = mapper;
+    }
+    
+    [AllowAnonymous]
+    [HttpPost("/auth/sign-in")]
+    public async Task<IActionResult> Authenticate(AuthenticateRequest request)
+    {
+        var response = await _personService.Authenticate(request);
+        return Ok(response);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("/auth/sign-up")]
+    public async Task<IActionResult> Register(RegisterPersonRequest request)
+    {
+        await _personService.RegisterAsync(request);
+        return Ok(new {message = "Registration successful."});
     }
     
     [HttpGet]
@@ -37,7 +56,22 @@ public class PersonController: ControllerBase
         
         return resource;
     }
+    
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, UpdatePersonRequest request)
+    {
+        await _personService.UpdateAsync(id, request);
+        return Ok(new {message = "Person Updated Successfully."});
+    }
 
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _personService.DeleteAsync(id);
+        return Ok(new {message = "Person Deleted successfully."});
+    }
+
+    /*
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] SavePersonResource resource)
     {
@@ -83,4 +117,5 @@ public class PersonController: ControllerBase
         
         return Ok(resource);
     }
+    */
 }
