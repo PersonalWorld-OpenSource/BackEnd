@@ -5,11 +5,32 @@ using PersonalWorld.API.Personal.Mapping;
 using PersonalWorld.API.Personal.Persistence.Contexts;
 using PersonalWorld.API.Personal.Persistence.Repositories;
 using PersonalWorld.API.Personal.Services;
+using PersonalWorld.API.Security.Authorization.Handlers.Implementations;
+using PersonalWorld.API.Security.Authorization.Handlers.Interfaces;
+using PersonalWorld.API.Security.Authorization.Middleware;
+using PersonalWorld.API.Security.Authorization.Settings;
 
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//Add CORS Service
+builder.Services.AddCors();
 
+//App settings configuration
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy  =>
+        {
+            policy.WithOrigins("*")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
+// Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -43,6 +64,7 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 builder.Services.AddScoped<IMessageService, MessageService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 
 builder.Services.AddAutoMapper(
     typeof(ModelToResourceProfile),
@@ -62,6 +84,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//Configure CORS
+app.UseCors(x=>x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
+//Middleware services configuration
+
+//Configure Error Handler Middleware
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
+//Configure JSON web Token Handling Middleware
+app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
 
