@@ -1,17 +1,20 @@
 using PersonalWorld.API.Personal.Domain.Models;
-using PersonalWorld.API.Personal.Domain.Services.Communication;
+using PersonalWorld.API.Security.Domain.Services.Communication;
 
 namespace PersonalWorld.API.Personal.Domain.Services;
 
 public interface IPersonLawyerService
 {
+    public Task<AuthenticateResponse> Authenticate(AuthenticateRequest request);
     Task<IEnumerable<PersonLawyer>> ListAsync();
 
-    Task<PersonLawyerResponse> SaveAsync(PersonLawyer personLawyer);
+    Task RegisterAsync(RegisterLawyerRequest request);
+    //Task<PersonLawyerResponse> SaveAsync(PersonLawyer personLawyer);
 
-    Task<PersonLawyerResponse> FindByIdAsync(int id);
+    Task<PersonLawyer> FindByIdAsync(int id);
 
-    Task<PersonLawyerResponse> UpdateAsync(int id, PersonLawyer personLawyer);
-
-    Task<PersonLawyerResponse> DeleteAsync(int id);
+    Task UpdateAsync(int personId, UpdateLawyerRequest person);
+    //Task<PersonLawyerResponse> UpdateAsync(int id, PersonLawyer personLawyer);
+    Task DeleteAsync(int personId);
+    //Task<PersonLawyerResponse> DeleteAsync(int id);
 }
