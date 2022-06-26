@@ -11,6 +11,7 @@ public class ModelToResourceProfile : Profile
     public ModelToResourceProfile()
     {
         CreateMap<Person, AuthenticateResponse>();
+        CreateMap<PersonLawyer, AuthenticateResponse>();
         CreateMap<Person, PersonResource>();
         CreateMap<PersonLawyer, PersonLawyerResource>();
         CreateMap<Plan, PlanResource>();
