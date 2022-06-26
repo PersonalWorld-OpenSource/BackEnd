@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {}
+    "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BACKEND SECURITY\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {
+    "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BACKEND SECURITY\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
+        "projectUniqueName": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BACKEND SECURITY\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
         "projectName": "PersonalWorld.API",
-        "projectPath": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
-        "packagesPath": "C:\\Users\\G5 KC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\G5 KC\\Documents\\BackEnd\\PersonalWorld.API\\obj\\",
+        "projectPath": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BACKEND SECURITY\\BackEnd\\PersonalWorld.API\\PersonalWorld.API.csproj",
+        "packagesPath": "C:\\Users\\Joaqu\\.nuget\\packages\\",
+        "outputPath": "D:\\CURSOS\\2022-01\\Aplicaciones Web\\BACKEND SECURITY\\BackEnd\\PersonalWorld.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\G5 KC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,6 +48,14 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.5, )"
@@ -63,6 +73,10 @@
               "version": "[6.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.1, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
               "version": "[6.3.1, )"
             }
@@ -85,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\G5 KC\\.dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

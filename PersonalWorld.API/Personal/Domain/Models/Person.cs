@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace PersonalWorld.API.Personal.Domain.Models;
 
 public class Person
@@ -6,6 +8,8 @@ public class Person
     public string FisrtName { get; set; }
     public string LastName { get; set; }
     public string Email { get; set; }
+
+    [JsonIgnore]
     public string Password { get; set; }
     public string Description { get; set; }
     public string UrlImage { get; set; }
