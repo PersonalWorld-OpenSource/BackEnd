@@ -23,16 +23,31 @@ public class PersonRepository : BaseRepository, IPersonRepository
 
     public async Task<Person> FindByIdAsync(int id)
     {
-        return await _context.Persons.FindAsync(id);
+        return await _context.Persons.FirstOrDefaultAsync(p => p.Id == id);
+    }
+
+    public async Task<Person> FindByEmailAsync(string email)
+    {
+        return await _context.Persons.SingleOrDefaultAsync(p => p.Email == email);
+    }
+
+    public bool ValidateEmail(string email)
+    {
+        return _context.Persons.Any(p => p.Email == email);
+    }
+
+    public Person FindById(int id)
+    {
+        return _context.Persons.Find(id);
     }
 
     public void Update(Person person)
     {
-        _context.Update(person);
+        _context.Persons.Update(person);
     }
 
     public void Remove(Person person)
     {
-        _context.Remove(person);
+        _context.Persons.Remove(person);
     }
 }

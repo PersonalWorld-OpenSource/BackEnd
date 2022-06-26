@@ -24,7 +24,7 @@ public class AppDbContext : DbContext
         base.OnModelCreating(builder);
         
         //Person
-        builder.Entity<Person>().ToTable("Persons");
+        
         builder.Entity<Plan>().ToTable("Plans");
         builder.Entity<PersonPlan>().ToTable("PersonPlan");
         
@@ -38,21 +38,22 @@ public class AppDbContext : DbContext
             .HasOne(p => p.Person).WithMany(p => p.PersonPlans).HasForeignKey(P => P.PersonId);
         
         //Person
+        builder.Entity<Person>().ToTable("Persons");
         builder.Entity<Person>().HasKey(p => p.Id);
         builder.Entity<Person>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Person>().Property(p => p.FisrtName).IsRequired().HasMaxLength(40);
         builder.Entity<Person>().Property(p => p.LastName).IsRequired().HasMaxLength(40);
         builder.Entity<Person>().Property(p => p.Email).IsRequired().HasMaxLength(50);
-        builder.Entity<Person>().Property(p => p.Password).IsRequired().HasMaxLength(40);
+        //builder.Entity<Person>().Property(p => p.Password).IsRequired().HasMaxLength(40);
         builder.Entity<Person>().Property(p => p.Description).IsRequired().HasMaxLength(200);
         builder.Entity<Person>().Property(p => p.UrlImage).IsRequired().HasMaxLength(100);
         builder.Entity<Person>().Property(p => p.Type).IsRequired().HasMaxLength(20);
         
         //Person Lawyer
-        builder.Entity<PersonLawyer>().Property(l => l.Specialty).IsRequired().HasMaxLength(30);
-        builder.Entity<PersonLawyer>().Property(l => l.WonCases).IsRequired();
-        builder.Entity<PersonLawyer>().Property(l => l.TotalCases).IsRequired();
-        builder.Entity<PersonLawyer>().Property(l => l.LostCases).IsRequired();
+        builder.Entity<PersonLawyer>().Property(l => l.Specialty).HasMaxLength(30);
+        builder.Entity<PersonLawyer>().Property(l => l.WonCases);
+        builder.Entity<PersonLawyer>().Property(l => l.TotalCases);
+        builder.Entity<PersonLawyer>().Property(l => l.LostCases);
         
         //Plans
         builder.Entity<Plan>().HasKey(p => p.Id);

@@ -13,4 +13,8 @@ public interface IPersonLawyerRepository
     void Update(PersonLawyer personLawyer);
     
     void Remove(PersonLawyer personLawyer);
+    
+    Task<PersonLawyer> FindByEmailAsync(string email);
+    public bool ValidateEmail(string email);
+    public PersonLawyer FindById(int id);
 }

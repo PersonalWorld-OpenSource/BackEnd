@@ -23,16 +23,31 @@ public class PersonLawyerRepository : BaseRepository, IPersonLawyerRepository
 
     public async Task<PersonLawyer> FindByIdAsync(int id)
     {
-        return await _context.Lawyers.FindAsync(id);
+        return await _context.Lawyers.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public void Update(PersonLawyer personLawyer)
     {
-        _context.Update(personLawyer);
+        _context.Lawyers.Update(personLawyer);
     }
 
     public void Remove(PersonLawyer personLawyer)
     {
-        _context.Remove(personLawyer);
+        _context.Lawyers.Remove(personLawyer);
+    }
+
+    public async Task<PersonLawyer> FindByEmailAsync(string email)
+    {
+        return await _context.Lawyers.SingleOrDefaultAsync(p => p.Email == email);
+    }
+
+    public bool ValidateEmail(string email)
+    {
+        return _context.Lawyers.Any(p => p.Email == email);
+    }
+
+    public PersonLawyer FindById(int id)
+    {
+        return _context.Lawyers.Find(id);
     }
 }
